@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MayBell Developments — Lilium Village Resident Journey</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: 'Lato', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #F0F7F7;
+            margin: 0;
+            padding: 20px;
+            color: #1f2937;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #0F3656 0%, #164E6B 60%, #28BCB8 100%);
+            color: white;
+            border-radius: 12px;
+            margin-bottom: 24px;
+        }
+        .header h1 { margin: 0 0 8px 0; font-size: 28px; letter-spacing: -0.3px; }
+        .header p { margin: 0; opacity: 0.88; font-size: 14px; }
+        .how-to-read {
+            background: white;
+            border-left: 4px solid #28BCB8;
+            padding: 16px 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .how-to-read strong { color: #0F3656; }
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            background: white;
+            padding: 16px;
+            border-radius: 8px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: #1f2937;
+        }
+        .legend-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+        }
+        .diagram-container {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            overflow-x: auto;
+            margin-bottom: 24px;
+        }
+        .mermaid { text-align: center; }
+        .questions {
+            background: white;
+            border-radius: 12px;
+            padding: 28px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 24px;
+        }
+        .questions h2 {
+            color: #0F3656;
+            margin-top: 0;
+            font-size: 20px;
+            border-bottom: 2px solid #28BCB8;
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+        .questions .intro {
+            font-size: 14px;
+            color: #4b5563;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .questions ol { padding-left: 20px; }
+        .questions li {
+            margin-bottom: 14px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .questions li strong { color: #0F3656; }
+        .context {
+            background: white;
+            border-radius: 12px;
+            padding: 28px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 24px;
+        }
+        .context h2 {
+            color: #0F3656;
+            margin-top: 0;
+            font-size: 20px;
+            border-bottom: 2px solid #28BCB8;
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+        .context h3 {
+            color: #0F3656;
+            font-size: 15px;
+            margin-bottom: 6px;
+            margin-top: 18px;
+        }
+        .context p, .context li {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #1f2937;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #6b7280;
+            font-size: 12px;
+        }
+        .callout {
+            background: #F0F7F7;
+            border-left: 4px solid #28BCB8;
+            padding: 12px 16px;
+            border-radius: 4px;
+            font-size: 13px;
+            margin-top: 12px;
+            color: #0F3656;
+        }
+        .quote {
+            font-style: italic;
+            color: #0F3656;
+            border-left: 3px solid #28BCB8;
+            padding: 4px 12px;
+            margin: 10px 0;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="header">
+        <h1>MayBell Developments — Lilium Village Resident Journey</h1>
+        <p>Proposed Mareto workflow · Prepared by HelpSeeker Technologies · May 5, 2026 · draft for review</p>
+    </div>
+
+    <div class="how-to-read">
+        <strong>How to read this:</strong> this diagram is a <em>draft</em> of how we understand the Lilium Village resident journey, based on the kick-off conversation on April 29. Colours show who is doing what at each step — the resident or her referring agency, the Mareto system doing automated things, MayBell staff, the housing/tenancy side, the Encouragement Program, board reporting, and the holding states (wait list, decline, transition out). Please review, challenge anything that doesn't match how you actually work, and bring the questions at the bottom to our next conversation. It's much easier to sort out the shape of things <em>before</em> we start building — this is the moment.
+    </div>
+
+    <div class="legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#E8F4FD;border:2px solid #2196F3"></div> Resident or Referring Agency</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#FFF3E0;border:2px solid #FF9800"></div> System (Automated)</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#E8F5E9;border:2px solid #4CAF50"></div> MayBell Staff</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#F3E5F5;border:2px solid #9C27B0"></div> Tenancy / Unit</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#FFF8E1;border:2px solid #FFC107"></div> Encouragement Program</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#FCE4EC;border:2px solid #E91E63"></div> Reporting / Board</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#FFEBEE;border:2px solid #F44336"></div> Hold / Decline / Exit</div>
+    </div>
+
+    <div class="diagram-container">
+        <div class="mermaid">
+flowchart TD
+    R1["1 · INQUIRY
+    Prospective resident or referring agency
+    Phone, email, or in person"]
+    R2["2 · SHORT-FORM APPLICATION
+    Fillable PDF on MayBell website
+    Low-income · single-mother · priority status"]
+    R3["3 · APPLICANT RECEIVES LONG-FORM
+    By email (or printed in person)
+    Income · ID · rental history · references
+    Includes the first formal consent"]
+
+    S1{"4 · ELIGIBILITY SCREEN
+    Single-mother · low-income (SHIM)
+    Priority: DV / trafficking / homelessness"}
+    S1_DECLINE["✗ DECLINE OR REFER OUT
+    Family notified · reason logged
+    Pointed to alternative supports"]
+
+    S2["5 · WAIT LIST
+    Held with priority + tenure
+    Typical wait: 6 months to 1.5 years
+    Long-form requested only when capacity is realistic"]
+
+    St1["6 · INTERVIEW
+    In person with MayBell
+    Clarifies history, gaps, fit
+    (Michelle's revised name for what was 'intake')"]
+    St2{"7 · INTERNAL REVIEW & DECISION
+    Michelle + Women's Support Worker
+    Approve · Defer for more info · Decline"}
+    St2_DECLINE["✗ DECLINE / DEFER
+    Reason and rationale logged for audit
+    Family may resubmit later"]
+
+    T1["8 · TENANCY · ORIENTATION · MOVE-IN
+    Sign tenancy agreement
+    Sign secondary consent (CFS releases etc.)
+    Same day or up to ~1 month out"]
+    T2["9 · UNIT ASSIGNMENT
+    One of 12 units across 6 duplex buildings
+    Accessibility need → unit 1, 7, or 10
+    Unit auto-flips to OCCUPIED"]
+    T3["10 · INITIAL SETTLING
+    Weeks 0–4 · resident-led + WSW check-ins
+    Urgent needs · childcare-slot flag
+    Community-partner introductions"]
+
+    St3["11 · INDIVIDUALIZED CASE PLAN
+    Co-created within first month
+    Goals · supports · partner connections
+    Child-specific considerations on each child sub-record"]
+
+    P1["12 · ENCOURAGEMENT PROGRAM
+    Faith & Finances · Work Life · Tenancy Training
+    Per-resident enrolment + attendance
+    Rotation rhythm (to be confirmed)"]
+    O1["13 · ONGOING SUPPORT (the long arc · 2–5 years)
+    Case notes · partner touch-points
+    Goal progress · plan revisions
+    Children threaded inside the case"]
+
+    Rep1["14 · OUTCOME CAPTURE & REPORTING
+    Relationships built · graduations · participation
+    Rolled into Word reports for the board
+    Logic model anchors the indicator set"]
+
+    Ex1["15 · TRANSITION OUT
+    Notice given or planned exit (up to 5 yrs)
+    Move-out logistics · exit measures
+    Unit returns to OCCUPIED → VACANT pool"]
+
+    R1 --> R2 --> S1
+    S1 -->|"Not eligible"| S1_DECLINE
+    S1 -->|"Eligible — no unit"| S2
+    S1 -->|"Eligible — capacity opening"| R3
+    S2 -.->|"Capacity opens (months later)"| R3
+    R3 --> St1
+    St1 --> St2
+    St2 -->|"Decline / Defer"| St2_DECLINE
+    St2 -->|"Approve"| T1
+    T1 --> T2 --> T3 --> St3
+    St3 --> P1
+    St3 --> O1
+    P1 --> O1
+    O1 --> Rep1
+    O1 --> Ex1
+    Ex1 -.->|"Unit re-tenancy pulls from wait list"| S2
+
+    classDef resident fill:#E8F4FD,stroke:#2196F3,stroke-width:2px,color:#1565C0
+    classDef system fill:#FFF3E0,stroke:#FF9800,stroke-width:2px,color:#E65100
+    classDef staff fill:#E8F5E9,stroke:#4CAF50,stroke-width:2px,color:#2E7D32
+    classDef tenancy fill:#F3E5F5,stroke:#9C27B0,stroke-width:2px,color:#6A1B9A
+    classDef program fill:#FFF8E1,stroke:#FFC107,stroke-width:2px,color:#F57F17
+    classDef reporting fill:#FCE4EC,stroke:#E91E63,stroke-width:2px,color:#880E4F
+    classDef exit fill:#FFEBEE,stroke:#F44336,stroke-width:2px,color:#B71C1C
+
+    class R1,R2,R3 resident
+    class S1 system
+    class S2 exit
+    class St1,St2,St3,T3 staff
+    class T1,T2 tenancy
+    class P1 program
+    class O1 staff
+    class Rep1 reporting
+    class S1_DECLINE,St2_DECLINE,Ex1 exit
+        </div>
+    </div>
+
+    <div class="context">
+        <h2>What changed at kick-off</h2>
+        <p>The April 29 conversation re-cut a lot of vocabulary we'd been carrying. Two things especially landed:</p>
+        <h3>1. "Intake" is move-in, not the meeting before</h3>
+        <p>Michelle reframed her own language mid-conversation. What she initially called the "intake meeting" is more accurately an <strong>Interview</strong>; the word <strong>"intake"</strong> belongs to the day a resident signs the tenancy agreement and moves in. The diagram above uses Michelle's revised vocabulary — Inquiry → Short-Form → Eligibility Screen → Wait List → Long-Form → Interview → Internal Review → Tenancy &amp; Move-In → Settling → Case Plan → Ongoing → Transition Out — and we'll lock these terms across the build artifacts.</p>
+        <h3>2. The "suitcase" case model</h3>
+        <p>From Michelle's Saskatchewan Social Services background: the mother is the case (she holds the lease and the relationship), and her children — and any rare second adults — live as <strong>sub-cases inside her suitcase</strong>. The flow above shows the mother's path; child information, behavioural needs, childcare-slot status, and community-partner connections are <em>threaded into</em> her record rather than running as parallel cases.</p>
+        <div class="quote">"the suitcase and then each individual thing would go inside"</div>
+        <h3>What we heard about the current state</h3>
+        <ul>
+            <li><strong>No CRM today.</strong> The stack is Word documents, OneDrive, a fillable PDF on the website, and a OneNote tab for community-connection notes.</li>
+            <li><strong>Operational since December 2025</strong> — about five months of records. Effectively no legacy migration.</li>
+            <li><strong>Wait-list reality:</strong> 6 months to 1.5 years between short-form and a unit opening. Long-form is requested only when capacity is realistic.</li>
+            <li><strong>Two consents, not one:</strong> a general release embedded in the long-form, plus a secondary consent (e.g. child-protection releases) signed at move-in.</li>
+            <li><strong>12 units · 6 duplex buildings · 3 accessible (units 1, 7, 10).</strong></li>
+            <li><strong>Two users today:</strong> Michelle and the Women's Support Worker, same access level.</li>
+            <li><strong>Reporting is Word docs to the board.</strong> A draft logic model is coming.</li>
+        </ul>
+        <h3>What's new or different in Mareto</h3>
+        <ul>
+            <li><strong>One "suitcase" view.</strong> Resident, household, tenancy, case notes, programs, partners and goals on a single record — replacing Word + OneDrive + OneNote + email.</li>
+            <li><strong>Wait-list visibility.</strong> Today the holding state is implicit; in Mareto it's a list with priority and tenure, so you know who is waiting and how long.</li>
+            <li><strong>Two-stage consent, modelled.</strong> Mareto will know which consents are signed and what each one unlocks (information sharing, agency releases, etc.).</li>
+            <li><strong>Audit trail on admission decisions.</strong> Approve / Defer / Decline rationale captured, not held in a closed-door discussion.</li>
+            <li><strong>Community-partner directory + per-case linkage.</strong> The OneNote tab becomes structured connections threaded into each case.</li>
+            <li><strong>Childcare-slot flag</strong> on the child sub-record (Using / Wait List / Declined). Childcare itself stays in its own system; this is the bridge.</li>
+            <li><strong>Unit lifecycle automated.</strong> Tenancy signed → unit OCCUPIED. Notice given → upcoming change. Move-out → VACANT and back into the wait-list pool.</li>
+            <li><strong>Outcome dashboards.</strong> Rolled-up numbers for residents, children, program enrolments, graduations, partner referrals, wait-list size, plus structured space for the qualitative narrative the board wants.</li>
+        </ul>
+        <div class="callout">
+            Outcome indicators come from MayBell's logic model (still in draft). The build will use Michelle's stated indicators — relationships built, graduations from programming, program participation — and absorb the final logic model when it lands.
+        </div>
+    </div>
+
+    <div class="questions">
+        <h2>Questions for your team to think through</h2>
+        <p class="intro">These are the spots where we need your direction before we start configuring. No right answers — just pick what feels right for how your team actually works. If you're unsure, flag it and we'll talk through it on the next call.</p>
+        <ol>
+            <li><strong>Community partners.</strong> What are the names of the three recurring community-partner organizations you mentioned? We'd like to seed the partner directory with them and track which cases they're connected to.</li>
+            <li><strong>Encouragement Program — rhythm.</strong> Is the program <em>mandatory</em> for every resident? Is it on a fixed rotation across the year, or does each resident enrol when they're ready? And what does "graduating" from it mean concretely?</li>
+            <li><strong>Women's Support Worker.</strong> Could we have her name and email? Should she join future build conversations from here on, or stay represented through you?</li>
+            <li><strong>Transition Out.</strong> What does success at exit look like? Are there exit-stage measures or a structured close-out conversation, or is it case-by-case today?</li>
+            <li><strong>Logic model.</strong> When can we expect the draft? Even an early version helps us shape the outcome-indicator structure so we don't have to rework it later.</li>
+            <li><strong>Both consent forms.</strong> Could you share the long-form embedded consent and the secondary consent so we can model what each one unlocks (information sharing, partner releases, child-protection releases)?</li>
+            <li><strong>Priority statuses.</strong> Domestic violence, exiting human trafficking, currently or at risk of homelessness — is this list exhaustive, or are there others to design fields for?</li>
+            <li><strong>Wait-list ordering.</strong> When a unit opens, is the next resident chosen by priority status alone, by how long they've been waiting, by a judgement call combining both, or something else?</li>
+            <li><strong>Accessibility units.</strong> Units 1, 7, and 10 are the larger accessible ones. Should Mareto <em>enforce</em> assignment by accessibility need, or just <em>suggest</em> it and let staff decide?</li>
+            <li><strong>Board reporting cadence.</strong> How often does the board report go out, and what sections does it usually contain? We'd like the dashboard to fold cleanly into your existing Word template rather than replacing it.</li>
+        </ol>
+    </div>
+
+    <div class="footer">
+        <p>HelpSeeker Technologies · Mareto Platform · MayBell Developments / Lilium Village Implementation · Target go-live: late July to early August 2026</p>
+    </div>
+
+</div>
+
+<script>
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'default',
+        flowchart: {
+            useMaxWidth: true,
+            htmlLabels: true,
+            curve: 'basis',
+            padding: 20,
+            nodeSpacing: 30,
+            rankSpacing: 50
+        },
+        themeVariables: {
+            fontSize: '13px',
+            fontFamily: 'Lato, Segoe UI, sans-serif'
+        }
+    });
+</script>
+
+</body>
+</html>
