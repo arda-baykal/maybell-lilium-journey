@@ -173,10 +173,10 @@ flowchart TD
     Prospective resident or referring agency
     Phone, email, or in person"]
     R2["2 · SHORT-FORM APPLICATION
-    Fillable PDF on MayBell website
+    Submitted by resident or referring agency
     Low-income · single-mother · priority status"]
-    R3["3 · APPLICANT RECEIVES LONG-FORM
-    By email (or printed in person)
+    R3["3 · LONG-FORM REQUESTED & SENT
+    Staff sends long-form when capacity is realistic
     Income · ID · rental history · references
     Includes the first formal consent"]
 
@@ -264,10 +264,10 @@ flowchart TD
     classDef reporting fill:#FCE4EC,stroke:#E91E63,stroke-width:2px,color:#880E4F
     classDef exit fill:#FFEBEE,stroke:#F44336,stroke-width:2px,color:#B71C1C
 
-    class R1,R2,R3 resident
+    class R1,R2 resident
     class S1 system
     class S2 exit
-    class St1,St2,St3,T3 staff
+    class R3,St1,St2,St3,T3 staff
     class T1,T2 tenancy
     class P1 program
     class O1 staff
@@ -295,15 +295,16 @@ flowchart TD
         <h2>Questions for your team to think through</h2>
         <p class="intro">These are the spots where we need your direction before we start configuring. No right answers — just pick what feels right for how your team actually works. If you're unsure, flag it and we'll talk through it on the next call.</p>
         <ol>
-            <li><strong>Community partners.</strong> What are the names of the three recurring community-partner organizations you mentioned? We'd like to seed the partner directory with them and track which cases they're connected to.</li>
-            <li><strong>Encouragement Program — rhythm.</strong> Is the program <em>mandatory</em> for every resident? Is it on a fixed rotation across the year, or does each resident enrol when they're ready? And what does "graduating" from it mean concretely?</li>
-            <li><strong>Transition Out.</strong> What does success at exit look like? Are there exit-stage measures or a structured close-out conversation, or is it case-by-case today?</li>
-            <li><strong>Logic model.</strong> When can we expect the draft? Even an early version helps us shape the outcome-indicator structure so we don't have to rework it later.</li>
-            <li><strong>Both consent forms.</strong> Could you share the long-form embedded consent and the secondary consent so we can model what each one unlocks (information sharing, partner releases, child-protection releases)?</li>
-            <li><strong>Priority statuses.</strong> Domestic violence, exiting human trafficking, currently or at risk of homelessness — is this list exhaustive, or are there others to design fields for?</li>
-            <li><strong>Wait-list ordering.</strong> When a unit opens, is the next resident chosen by priority status alone, by how long they've been waiting, by a judgement call combining both, or something else?</li>
-            <li><strong>Accessibility units.</strong> Units 1, 7, and 10 are the larger accessible ones. Should Mareto <em>enforce</em> assignment by accessibility need, or just <em>suggest</em> it and let staff decide?</li>
-            <li><strong>Board reporting cadence.</strong> How often does the board report go out, and what sections does it usually contain? We'd like the dashboard to fold cleanly into your existing Word template rather than replacing it.</li>
+            <li><strong>Community partners.</strong> Which organizations should appear as the starting partner directory, and how would you like staff to record a touch-point against a case — free-text note, structured field, or both?</li>
+            <li><strong>Programs.</strong> Should program participation be assigned by staff, picked by the resident, or a mix — and is participation expected across all three programs or sequenced one at a time?</li>
+            <li><strong>Wait-list ordering.</strong> When a unit opens, how should the next applicant be selected — pure priority, time on list, a blend, or staff judgement against the case?</li>
+            <li><strong>Accessibility units.</strong> For units 1, 7 and 10, should the system enforce assignment based on stated accessibility need, or surface a recommendation that staff can override?</li>
+            <li><strong>Consent gating.</strong> For the secondary consent form, which staff actions should be unavailable until it is signed — and is that the same set for every resident or does it vary by case?</li>
+            <li><strong>Child sub-records.</strong> Beyond the childcare-slot flag, what attributes about each child should staff be able to log against the mother's case (behavioural-need flag, school, external supports)?</li>
+            <li><strong>Successful transition out.</strong> How would staff describe a successful exit, and what should be captured at move-out so that it counts toward outcome reporting?</li>
+            <li><strong>Board reporting.</strong> What cadence and what standard sections should the rolled-up reporting view be designed around so it drops cleanly into the format the board expects?</li>
+            <li><strong>Unit naming.</strong> Stay numeric (1–12), or attach names — and if names, who should be able to set or change them?</li>
+            <li><strong>Logic model.</strong> When the draft is shared, would a working session to map indicators against the journey stages be useful before the outcome modules are built?</li>
         </ol>
     </div>
 
